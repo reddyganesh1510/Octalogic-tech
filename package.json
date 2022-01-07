@@ -1,0 +1,17 @@
+{
+  "name": "octalogic-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "concurrently  \"cd client && npm install\" \"cd server && npm install\"",
+    "start": "concurrently \"cd client && npm run start\" \"cd server && npm run start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@date-io/date-fns": "^2.11.0",
+    "concurrently": "^6.4.0"
+  }
+}
