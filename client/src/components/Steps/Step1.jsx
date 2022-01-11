@@ -17,6 +17,7 @@ function Step1({ data, setData }) {
           label="First Name"
           variant="outlined"
           placeholder="Enter Your First Name"
+          value={data.firstName}
           fullWidth
           margin="normal"
           onChange={handleChange}
@@ -29,6 +30,7 @@ function Step1({ data, setData }) {
           id="first-name"
           label="Last Name"
           variant="outlined"
+          value={data.lastName}
           placeholder="Enter Your Last Name"
           fullWidth
           margin="normal"

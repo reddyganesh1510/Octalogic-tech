@@ -32,6 +32,7 @@ export default function StepperE() {
     firstName: "",
     lastName: "",
     noOfWheels: "4",
+    dataChangedAt: 1,
     vehicleTypes: [],
     selectedVehicleType: "",
     vehicleName: [],
@@ -126,18 +127,18 @@ export default function StepperE() {
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    if (activeStep == 2) {
-      setData((prevState) => ({
-        ...prevState,
-        selectedVehicleType: "",
-      }));
-    }
-    if (activeStep == 3) {
-      setData((prevState) => ({
-        ...prevState,
-        selectedVehicleName: "",
-      }));
-    }
+    // if (activeStep == 2) {
+    //   setData((prevState) => ({
+    //     ...prevState,
+    //     selectedVehicleType: "",
+    //   }));
+    // }
+    // if (activeStep == 3) {
+    //   setData((prevState) => ({
+    //     ...prevState,
+    //     selectedVehicleName: "",
+    //   }));
+    // }
   };
 
   const handleSkip = () => {
@@ -162,6 +163,7 @@ export default function StepperE() {
       lastName: "",
       noOfWheels: "4",
       vehicleTypes: [],
+      dataChangedAt: 1,
       selectedVehicleType: "",
       vehicleName: [],
       selectedVehicleName: "",

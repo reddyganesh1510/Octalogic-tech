@@ -21,6 +21,12 @@ export default function Step3({ data, setData }) {
           ...prevState,
           vehicleTypes: res.data.vehicles,
         }));
+        if (data.dataChangedAt < 2) {
+          setData((prevState) => ({
+            ...prevState,
+            selectedVehicleType: res.data.vehicles[0],
+          }));
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -28,9 +34,11 @@ export default function Step3({ data, setData }) {
   }, []);
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setData((prevState) => ({
       ...prevState,
       selectedVehicleType: value,
+      dataChangedAt: 2,
     }));
   };
   return (
@@ -39,6 +47,7 @@ export default function Step3({ data, setData }) {
       <RadioGroup
         onChange={handleChange}
         row
+        value={data.selectedVehicleType}
         aria-label="Wheels"
         name="row-radio-buttons-group"
         onChange={handleChange}

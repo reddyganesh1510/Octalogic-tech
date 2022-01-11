@@ -21,6 +21,12 @@ export default function Step4({ data, setData }) {
           ...prevState,
           vehicleName: res.data.vehicles,
         }));
+        if (data.dataChangedAt < 3) {
+          setData((prevState) => ({
+            ...prevState,
+            selectedVehicleName: res.data.vehicles[0],
+          }));
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -31,6 +37,7 @@ export default function Step4({ data, setData }) {
     setData((prevState) => ({
       ...prevState,
       selectedVehicleName: value,
+      dataChangedAt: 3,
     }));
   };
   return (
@@ -38,6 +45,7 @@ export default function Step4({ data, setData }) {
       <FormLabel component="legend">Select Vehicle Brand</FormLabel>
       <RadioGroup
         onChange={handleChange}
+        value={data.selectedVehicleName}
         row
         aria-label="Wheels"
         name="row-radio-buttons-group"

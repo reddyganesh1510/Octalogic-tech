@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -11,6 +11,7 @@ export default function Step2({ data, setData }) {
     setData((prevState) => ({
       ...prevState,
       noOfWheels: value,
+      dataChangedAt: 1,
     }));
   };
   return (
